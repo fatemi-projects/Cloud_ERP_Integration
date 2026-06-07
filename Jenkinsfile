@@ -7,6 +7,13 @@ pipeline {
 
     stages {
 
+        stage('Check Files') {
+            steps {
+                sh 'ls -la'
+                sh 'ls -la .env || true'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME ./fastapi_service'
@@ -26,7 +33,7 @@ pipeline {
                 docker run -d \
                 --name fastapi-app \
                 -p 8000:8000 \
-                --env-file .env \
+                --env-file ./.env \
                 $IMAGE_NAME
                 '''
             }
