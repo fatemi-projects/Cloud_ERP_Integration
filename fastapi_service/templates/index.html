@@ -1,0 +1,372 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud ERP Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: inline-block;
+            margin: 5px 5px 0 0;
+            padding: 8px 10px;
+            border: none;
+            background: #0078d4;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        button:hover {
+            background: #005ea2;
+        }
+
+        #result {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Cloud ERP Dashboard</h1>
+
+<div class="grid">
+
+    <div class="card">
+        <h2>Customers</h2>
+        <button onclick="fetchData('customers')">Fetch</button>
+        <button>Create</button>
+        <button>Update</button>
+        <button>Delete</button>
+    </div>
+
+    <div class="card">
+        <h2>Products</h2>
+        <button onclick="fetchData('products')">Fetch</button>
+        <button>Create</button>
+        <button>Update</button>
+        <button>Delete</button>
+    </div>
+
+    <div class="card">
+        <h2>Orders</h2>
+        <button onclick="fetchData('orders')">Fetch</button>
+        <button>Create</button>
+        <button>Update</button>
+        <button>Delete</button>
+    </div>
+
+</div>
+
+<div id="result"></div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html> -->
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud ERP Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 8px 10px;
+            border: none;
+            background: #0078d4;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        button:hover {
+            background: #005ea2;
+        }
+
+        #result {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            min-height: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f0f0f0;
+        }
+
+        .empty {
+            color: gray;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Cloud ERP Dashboard</h1>
+<p style="color:#555; line-height:1.6;">
+    This project is a lightweight Cloud ERP Integration Dashboard built using FastAPI, Docker, and Odoo XML-RPC APIs.
+    It allows users to fetch and view Customers, Products, and Orders data from the ERP system through a clean web interface.
+    The project demonstrates backend API integration, containerized deployment, and real-time ERP data retrieval.
+</p>
+
+<div class="grid">
+
+    <div class="card">
+        <h2>Customers</h2>
+        <button onclick="fetchData('customers')">Fetch Customers</button>
+    </div>
+
+    <div class="card">
+        <h2>Products</h2>
+        <button onclick="fetchData('products')">Fetch Products</button>
+    </div>
+
+    <div class="card">
+        <h2>Orders</h2>
+        <button onclick="fetchData('orders')">Fetch Orders</button>
+    </div>
+
+</div>
+
+<div id="result">
+    <p class="empty">Click a button to load data</p>
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud ERP Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 8px 10px;
+            border: none;
+            background: #0078d4;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        button:hover {
+            background: #005ea2;
+        }
+
+        #result {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            min-height: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f0f0f0;
+        }
+
+        .empty {
+            color: gray;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <h1>Cloud ERP Dashboard</h1>
+    <button onclick="login()">Login</button>
+</div>
+
+<p style="color:#555;">
+    Cloud ERP Integration Dashboard using FastAPI + Odoo + Docker
+</p>
+
+<div class="grid">
+
+    <div class="card">
+        <h2>Customers</h2>
+        <button onclick="fetchData('customers')">Fetch</button>
+        <button onclick="createCustomer()">Create</button>
+        <button onclick="updateCustomer()">Update</button>
+        <button onclick="deleteCustomer()">Delete</button>
+    </div>
+
+    <div class="card">
+        <h2>Products</h2>
+        <button onclick="fetchData('products')">Fetch</button>
+        <button onclick="createProduct()">Create</button>
+        <button onclick="updateProduct()">Update</button>
+        <button onclick="deleteProduct()">Delete</button>
+    </div>
+    
+
+    <div class="card">
+        <h2>Orders</h2>
+        <button onclick="fetchData('orders')">Fetch</button>
+        <button onclick="createOrder()">Create</button>
+        <button onclick="updateOrder()">Update</button>
+        <button onclick="deleteOrder()">Delete</button>
+    </div>
+
+</div>
+
+<div id="result">
+    <p class="empty">Click a button to load data</p>
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
