@@ -8,7 +8,12 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy backend + frontend
+COPY . /app
+
+# Explicitly ensure templates and static are included
+COPY ./templates /app/templates
+COPY ./static /app/static
 
 EXPOSE 8000
 
