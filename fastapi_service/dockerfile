@@ -4,16 +4,21 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1
 
+# Copy and install dependencies
 COPY requirements.txt .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend + frontend
-COPY . /app
+# Copy backend code
+COPY ./core /app/core
+COPY ./routes /app/routes
+COPY ./services /app/services
 
-# Explicitly ensure templates and static are included
+# Copy frontend assets
 COPY ./templates /app/templates
 COPY ./static /app/static
+
+# Copy main entry point
+COPY main.py /app/main.py
 
 EXPOSE 8000
 
