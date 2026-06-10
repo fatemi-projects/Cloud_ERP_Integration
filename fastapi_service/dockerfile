@@ -19,7 +19,6 @@ COPY ./static /app/static
 
 # Copy main entry point
 COPY main.py /app/main.py
-COPY ../.env /app/.env
 
 EXPOSE 8000
 
