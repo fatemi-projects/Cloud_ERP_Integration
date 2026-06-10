@@ -1,28 +1,3 @@
-# from fastapi import APIRouter, HTTPException
-# from services.odoo_client import execute
-# from core.logger import setup_logger
-
-# logger = setup_logger()
-
-# router = APIRouter()
-
-# @router.get("/customers")
-# def get_customers():
-#     try:
-#         data = execute(
-#             "res.partner",
-#             "search_read",
-#             [[]],
-#             {"fields": ["id", "name", "email", "phone"], "limit": 20}
-#         )
-#         logger.info("Fetching customers from Odoo")
-
-#         return data
-
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-
-
 from fastapi import APIRouter, HTTPException
 from services.odoo_client import execute
 from core.logger import setup_logger
