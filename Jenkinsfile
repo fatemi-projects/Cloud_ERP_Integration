@@ -36,7 +36,7 @@ pipeline {
                 docker run -d \
                 --name fastapi-app \
                 -p 8000:8000 \
-                --env-file .env \
+                --env-file ../.env \
                 $IMAGE_NAME
                 '''
             }
