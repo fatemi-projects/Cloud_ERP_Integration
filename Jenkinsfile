@@ -35,6 +35,7 @@ pipeline {
                 sh '''
                 docker run -d \
                 --name fastapi-app \
+                --network cloud_erp_integration_erp-network \
                 -p 8000:8000 \
                 --env-file .env \
                 $IMAGE_NAME
