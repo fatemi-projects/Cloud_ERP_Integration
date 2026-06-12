@@ -5,22 +5,23 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 
 # Copy and install dependencies
-COPY requirements.txt .
+COPY fastapi_service/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
-COPY ./core /app/core
-COPY ./routes /app/routes
-COPY ./services /app/services
+COPY fastapi_service/core /app/core
+COPY fastapi_service/routes /app/routes
+COPY fastapi_service/services /app/services
 
 # Copy frontend assets
-COPY ./templates /app/templates
-COPY ./static /app/static
+COPY fastapi_service/templates /app/templates
+COPY fastapi_service/static /app/static
 
+# Copy .env from project root
 COPY .env /app/.env
 
 # Copy main entry point
-COPY main.py /app/main.py
+COPY fastapi_service/main.py /app/main.py
 
 EXPOSE 8000
 
