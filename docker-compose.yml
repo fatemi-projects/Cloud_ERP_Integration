@@ -32,7 +32,9 @@ services:
       - erp-network
 
   fastapi:
-    build: ./fastapi_service
+    build:
+      context: .
+      dockerfile: fastapi_service/dockerfile
     container_name: fastapi-app
     env_file:
       - .env

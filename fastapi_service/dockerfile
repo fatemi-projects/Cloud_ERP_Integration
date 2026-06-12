@@ -17,6 +17,8 @@ COPY ./services /app/services
 COPY ./templates /app/templates
 COPY ./static /app/static
 
+COPY .env /app/.env
+
 # Copy main entry point
 COPY main.py /app/main.py
 
