@@ -17,7 +17,7 @@ COPY services /app/services
 COPY templates /app/templates
 COPY static /app/static
 
-# Copy .env from project root (Jenkins copies it into workspace root)
+# Copy .env from project root
 COPY .env /app/.env
 
 # Copy main entry point
