@@ -5,7 +5,7 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 
 # Copy and install dependencies
-COPY fastapi_service/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
