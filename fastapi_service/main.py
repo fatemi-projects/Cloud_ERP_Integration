@@ -29,7 +29,7 @@ app.mount(
 )
 
 # ---------------- HOME PAGE ----------------
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse, tags=["system"])
 def home(request: Request):
     return templates.TemplateResponse(
         name="index.html",
@@ -38,14 +38,14 @@ def home(request: Request):
     )
 
 # ---------------- LOGIN ----------------
-@app.post("/login")
+@app.post("/login", tags=["system"])
 def login():
     token = create_token({"user": "admin"})
     logger.info("Creating Token")
     return {"access_token": token}
 
 # ---------------- HEALTH CHECK ----------------
-@app.get("/health")
+@app.get("/health", tags=["system"])
 def health_check():
     return {"status": "OK"}
 
