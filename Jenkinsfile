@@ -13,7 +13,7 @@ pipeline {
         stage('Check Files') {
             steps {
                 sh 'ls -la'
-                sh 'ls -la .env || true'
+                sh 'ls -la fastapi_service/.env || true'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
                 --name fastapi-app \
                 --network cloud_erp_integration_erp-network \
                 -p 8000:8000 \
-                --env-file .env \
+                --env-file fastapi_service/.env \
                 $IMAGE_NAME
                 '''
             }
