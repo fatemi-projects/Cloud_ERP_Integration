@@ -23,6 +23,7 @@ CLOUD_ERP_INTEGRATION/
 │   ├── main.py
 │   ├── dockerfile
 │   ├── requirements.txt
+│   ├── .env
 │   ├── core/
 │   │   ├── config.py
 │   │   ├── logger.py
@@ -46,7 +47,6 @@ CLOUD_ERP_INTEGRATION/
 │
 ├── docker-compose.yml
 ├── Jenkinsfile
-├── .env
 ├── .gitignore
 └── README.md
 ```
