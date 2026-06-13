@@ -28,20 +28,6 @@ app.mount(
     name="static"
 )
 
-# ---------------- API ROUTES ----------------
-API_PREFIX = "/api/v1"
-
-app.include_router(customers_router, prefix=API_PREFIX)
-app.include_router(products_router, prefix=API_PREFIX)
-app.include_router(orders_router, prefix=API_PREFIX)
-
-# ---------------- LOGIN ----------------
-@app.post("/login")
-def login():
-    token = create_token({"user": "admin"})
-    logger.info("Creating Token")
-    return {"access_token": token}
-
 # ---------------- HOME PAGE ----------------
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
@@ -51,8 +37,21 @@ def home(request: Request):
         request=request
     )
 
+# ---------------- LOGIN ----------------
+@app.post("/login")
+def login():
+    token = create_token({"user": "admin"})
+    logger.info("Creating Token")
+    return {"access_token": token}
+
 # ---------------- HEALTH CHECK ----------------
 @app.get("/health")
 def health_check():
     return {"status": "OK"}
 
+# ---------------- API ROUTES ----------------
+API_PREFIX = "/api/v1"
+
+app.include_router(customers_router, prefix=API_PREFIX)
+app.include_router(products_router, prefix=API_PREFIX)
+app.include_router(orders_router, prefix=API_PREFIX)
