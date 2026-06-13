@@ -267,8 +267,3 @@ curl -X GET http://localhost:8000/api/v1/customers
 ## Conclusion
 
 This project transforms a legacy ERP into a cloud-native, API-driven, scalable platform with modern DevOps practices and secure authentication.
-
-
-
-
-
