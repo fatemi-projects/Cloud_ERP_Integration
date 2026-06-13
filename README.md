@@ -38,12 +38,34 @@ CLOUD_ERP_INTEGRATION/
 │   └── static/
 │       └── app.js
 │
+├── images/
+│   ├── swagger.png
+│   ├── odoo_contacts.png
+│   ├── api_dashboard.png
+│   └── jenkins_build.png
+│
 ├── docker-compose.yml
 ├── Jenkinsfile
 ├── .env
 ├── .gitignore
 └── README.md
 ```
+
+---
+
+## Screenshots
+
+### Swagger API UI
+![Swagger UI](images/swagger.png)
+
+### Odoo ERP Contacts
+![Odoo Contacts](images/odoo_contacts.png)
+
+### API Dashboard
+![API Dashboard](images/api_dashboard.png)
+
+### Jenkins Build Pipeline
+![Jenkins Build](images/jenkins_build.png)
 
 ---
 
