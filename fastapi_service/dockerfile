@@ -9,19 +9,19 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
-COPY fastapi_service/core /app/core
-COPY fastapi_service/routes /app/routes
-COPY fastapi_service/services /app/services
+COPY core /app/core
+COPY routes /app/routes
+COPY services /app/services
 
 # Copy frontend assets
-COPY fastapi_service/templates /app/templates
-COPY fastapi_service/static /app/static
+COPY templates /app/templates
+COPY static /app/static
 
-# Copy .env from project root
+# Copy .env from project root (Jenkins copies it into workspace root)
 COPY .env /app/.env
 
 # Copy main entry point
-COPY fastapi_service/main.py /app/main.py
+COPY main.py /app/main.py
 
 EXPOSE 8000
 
